@@ -1,55 +1,78 @@
-
 .weather-container {
-    background-color: #2b2b2b;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: auto;
-  }
-  
-  .search input {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    width: 70%;
-  }
-  
-  .search button {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #ff6f61;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .units {
-    margin: 20px 0;
-  }
-  
-  .units label {
-    margin-right: 20px;
-    cursor: pointer;
-  }
-  
-  .weather-info {
-    margin-top: 20px;
-    background-color: #404040;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .weather-info h2 {
-    margin-bottom: 10px;
-  }
-  
-  .weather-info p {
-    margin: 5px 0;
-  }
-  
-  .weather-info img {
-    display: block;
-    margin: auto;
-  }
-  
+  background-color: #1a1a1a; 
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  font-family: Arial, sans-serif; 
+}
+
+.search {
+  display: flex; 
+  gap: 10px; 
+  margin-bottom: 20px; 
+}
+
+.search input {
+  padding: 12px;
+  border-radius: 8px; 
+  border: none;
+  width: 100%;
+  box-sizing: border-box; 
+  font-size: 16px;
+}
+
+.search button {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px; 
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+.search button:hover {
+  background-color: #e55d50; 
+  transform: scale(1.05); 
+}
+
+.units {
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; 
+}
+
+.units label {
+  cursor: pointer;
+  font-size: 16px; 
+  margin: 0; 
+}
+
+.weather-info {
+  margin-top: 20px;
+  background-color: #333; 
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.weather-info h2 {
+  margin-bottom: 15px; 
+  font-size: 24px;
+}
+
+.weather-info p {
+  margin: 10px 0; 
+  font-size: 18px; 
+}
+
+.weather-info img {
+  display: block;
+  margin: 20px auto; 
+  max-width: 100%;
+}

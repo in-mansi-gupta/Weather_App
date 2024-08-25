@@ -1,50 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import axios from 'axios';
-import './Weather.css'
+import './Weather.css';
+import CityAutocomplete from './CityAutocomplete';
 
 const Weather = () => {
     const [city, setCity] = useState('');
     const [weatherData, setWeatherData] = useState(null);
     const [units, setUnits] = useState('metric');
+    const [error, setError] = useState(null);
 
-    const handleCheckButton = async () => {
-        if (city === '')
-            return;
+    const API_KEY = "94e73ca305177de3a64552030e8fcc0b";
 
-        const API_KEY = "94e73ca305177de3a64552030e8fcc0b";
+    const fetchWeatherData = useCallback(async () => {
+        if (city === '') return;
+
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${API_KEY}`;
 
         try {
             const response = await axios.get(url);
             setWeatherData(response.data);
+            setError(null);
         } catch (error) {
-            console.error("Error fetching weather data: " + error);
+            console.error("Error fetching weather data:", error);
+            setError("Failed to fetch weather data. Please try again.");
         }
-    };
+    }, [city, units, API_KEY]);
 
     useEffect(() => {
-        if (weatherData) {
-            handleCheckButton();
-        }
-      }, [units]);
-    
+        fetchWeatherData();
+    }, [fetchWeatherData]);
 
     return (
         <div className="weather-container">
             <div className="search">
-                <input  type="text"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                        placeholder="City"
-                />
-                <button onClick={handleCheckButton}>Check!</button>
+                <CityAutocomplete setCity={setCity} />
+                <button onClick={fetchWeatherData}>Check!</button>
             </div>
-            <div>
-                <input type="radio" id="celsius" name="units" value="metric" checked={units === 'metric'} onChange={() => setUnits('metric')}/>
+            <div className="units">
+                <input
+                    type="radio"
+                    id="celsius"
+                    name="units"
+                    value="metric"
+                    checked={units === 'metric'}
+                    onChange={() => setUnits('metric')}
+                />
                 <label htmlFor="celsius">Celsius</label>
-                <input type="radio" id="fahrenheit" name="units" value="imperial" checked={units === 'imperial'} onChange={() => setUnits('imperial')} />
+                <input
+                    type="radio"
+                    id="fahrenheit"
+                    name="units"
+                    value="imperial"
+                    checked={units === 'imperial'}
+                    onChange={() => setUnits('imperial')}
+                />
                 <label htmlFor="fahrenheit">Fahrenheit</label>
             </div>
+            {error && <p className="error-message">{error}</p>}
             {weatherData && (
                 <div className="weather-info">
                     <h2>{weatherData.name}, {weatherData.sys.country}</h2>
@@ -55,7 +67,7 @@ const Weather = () => {
                 </div>
             )}
         </div>
-    )
+    );
 };
 
 export default Weather;
