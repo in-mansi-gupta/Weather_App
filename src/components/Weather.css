@@ -1,26 +1,38 @@
+.weather-page {
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Other styles */
 .weather-container {
-  background-color: #1a1a1a; 
+  background-color: rgba(43, 43, 43, 0.8);
   color: white;
   padding: 30px;
   border-radius: 12px;
   max-width: 500px;
   margin: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-  font-family: Arial, sans-serif; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
 }
 
 .search {
-  display: flex; 
-  gap: 10px; 
-  margin-bottom: 20px; 
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .search input {
   padding: 12px;
-  border-radius: 8px; 
+  border-radius: 8px;
   border: none;
   width: 100%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   font-size: 16px;
 }
 
@@ -31,48 +43,48 @@
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 16px; 
-  transition: background-color 0.3s, transform 0.2s; 
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .search button:hover {
-  background-color: #e55d50; 
-  transform: scale(1.05); 
+  background-color: #e55d50;
+  transform: scale(1.05);
 }
 
 .units {
   margin: 20px 0;
   display: flex;
   gap: 20px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .units label {
   cursor: pointer;
-  font-size: 16px; 
-  margin: 0; 
+  font-size: 16px;
+  margin: 0;
 }
 
 .weather-info {
   margin-top: 20px;
-  background-color: #333; 
+  background-color: #333;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .weather-info h2 {
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
   font-size: 24px;
 }
 
 .weather-info p {
-  margin: 10px 0; 
-  font-size: 18px; 
+  margin: 10px 0;
+  font-size: 18px;
 }
 
 .weather-info img {
   display: block;
-  margin: 20px auto; 
+  margin: 20px auto;
   max-width: 100%;
 }

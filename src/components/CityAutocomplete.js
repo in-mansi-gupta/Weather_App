@@ -5,9 +5,9 @@ import './CityAutocomplete.css';
 const CityAutocomplete = ({ setCity }) => {
   const [suggestions, setSuggestions] = useState([]);
   const [input, setInput] = useState('');
-  const [focusedIndex, setFocusedIndex] = useState(-1); // Track focused index for keyboard navigation
+  const [focusedIndex, setFocusedIndex] = useState(-1);
 
-  const API_KEY = "94e73ca305177de3a64552030e8fcc0b";
+  const API_KEY = "YOUR_OpenWeatherMap_API_KEY";
 
   const fetchSuggestions = useCallback(async (query) => {
     if (!query || query.length < 2) {
