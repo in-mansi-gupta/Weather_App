@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+Weather Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Overview
+The Weather Application is a React-based web app that provides real-time weather information for cities around the world. Users can search for a city and view current weather conditions, including temperature, humidity, and weather description. The app also features dynamic background changes based on the current weather, using images fetched from Unsplash.
 
-## Available Scripts
+Features
+City Search: Type in a city name to get current weather information.
+Temperature Units: Toggle between Celsius and Fahrenheit.
+Dynamic Backgrounds: The background image of the app changes based on the weather description, using Unsplash API for image fetching.
+Error Handling: Displays error messages if weather data cannot be fetched.
 
-In the project directory, you can run:
+Technologies Used
+React: For building the user interface.
+Axios: For making HTTP requests to the OpenWeatherMap API and Unsplash API.
+CSS: For styling the application.
+OpenWeatherMap API: To fetch weather data.
+Unsplash API: To fetch weather-related background images.
 
-### `npm start`
+Usage
+Search for a City: Enter a city name in the search box and click "Check!" to fetch weather data.
+Select Temperature Units: Choose between Celsius and Fahrenheit using the radio buttons.
+View Weather Information: Current temperature, feels like temperature, and weather description will be displayed.
+Dynamic Background: The background image changes based on the weather description.
+Project Structure
+src/: Contains the source code for the application.
+components/: Includes reusable React components like CityAutocomplete.
+Weather.js: Main component for fetching and displaying weather data.
+CityAutocomplete.js: Component for city name autocomplete functionality.
+Weather.css: CSS for styling the weather component.
+CityAutocomplete.css: CSS for styling the autocomplete component.
+.env: Environment file for API keys (not included in version control).
+package.json: Contains project dependencies and scripts.
+Contributing
+Contributions are welcome! Please open an issue or submit a pull request to contribute to this project. Follow the standard GitHub workflow:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Fork the repository.
+Create a new branch (git checkout -b feature-branch).
+Make your changes.
+Commit your changes (git commit -am 'Add new feature').
+Push to the branch (git push origin feature-branch).
+Open a pull request.
